@@ -1,0 +1,8 @@
+CREATE DATABASE sept29tts
+
+CREATE TABLE testing (test_clm int);
+
+drop TABLE testing;
+
+
+CREATE TABLE users(userid INT(10) PRIMARY key AUTO_INCREMENT,user_name varchar(50),email varchar(50),mobile varchar(50))
