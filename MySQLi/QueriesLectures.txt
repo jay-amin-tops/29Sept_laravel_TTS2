@@ -1,4 +1,4 @@
-
+﻿
 create database mydatabase
 
 create table users(userid int(10) primary key auto_increment)
@@ -182,3 +182,6 @@ Here is a simple example that associates a trigger with a table, to activate for
 ALTER TABLE `userpassbk` ADD FOREIGN KEY (`userid`) REFERENCES `users`(`userid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 CREATE TRIGGER updateupass BEFORE UPDATE ON users FOR EACH ROW INSERT INTO userpassbk SET password=OLD.password, userid=OLD.userid, date = NOW();
+
+
+CREATE TRIGGER userpassbk BEFORE UPDATE ON users FOR EACH ROW INSERT INTO userpassbk SET `userid`=OLD.userid, password=OLD.password, date=now;

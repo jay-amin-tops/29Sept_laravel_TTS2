@@ -34,3 +34,25 @@ SET @p0='7'; CALL `getuserdatabyid`(@p0); SELECT @p0 AS `uid`;
 
 
 CREATE TRIGGER update_pass BEFORE UPDATE ON users_tbl_new FOR EACH ROW INSERT INTO user_pass_backup SET user_id=OLD.userid, password=OLD.password, data=now()
+
+
+
+UPDATE users SET 
+`username` = "",
+`password`= "",
+`email`= "",
+`mobile`= "",
+`dob``gender`= "",
+`status`= "" 
+WHERE 
+userid = 
+
+
+
+create view view_name AS select column1,column2,column3 FROM table_name
+
+
+ALTER TABLE `srms`.`tblstudents` ADD UNIQUE `stdname` (`StudentName`);
+
+
+CREATE PROCEDURE getdataendwith(INOUT unamechar varchar(50)) SELECT * FROM tblstudents WHERE StudentName LIKE "%"+unamechar+"%";
