@@ -1,12 +1,17 @@
 <?php include('header.php'); 
-
+if (isset( $_SESSION['UserData'])) {
+    header("location:index.php");
+}
 if (isset($_POST['ichhathi-login'])) {
     // echo "<pre>";
     // print_r($_REQUEST);
     // print_r($_POST);
     if ($_POST['username'] == "TOPS" && $_POST['password'] == "123" ) { 
+            $_SESSION['OtherData'] = "test";
             $_SESSION['UserData'] = array("username"=>"TOPS","Location"=>"SG");
-            
+            // setcookie("userid",array("try"),time()+3600);
+            setcookie("userid","TOPS",time()+3600);
+
         ?>
             <script>
                 alert('Login success')

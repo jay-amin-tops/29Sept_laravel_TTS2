@@ -35,7 +35,7 @@ session_start();
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Features.php">Features</a>
+                        <a class="nav-link" href="productspage.php">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Pricing.php">Pricing</a>
