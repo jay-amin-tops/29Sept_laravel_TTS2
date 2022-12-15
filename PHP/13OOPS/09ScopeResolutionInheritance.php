@@ -34,3 +34,14 @@ class ChilClass extends GlobalMainClass{
 echo "<br>";
 // echo MainClass::$data;
 echo ChilClass::FunctionNameChild();
+?>
+
+
+<ul>
+    <li>HTML => 4/5</li>
+    <li>CSS => 3/5</li>
+    <li>Mysqli => 4/5</li>
+    <li>JavaScript => 2/5</li>
+    <li>Core PHP and OOPS => 4/5</li>
+    <li>Laravel => not worked</li>
+</ul>
