@@ -1,10 +1,12 @@
 <?php
+session_start();
 require_once("Model/model.php");
 // echo "<pre>";
 // print_r($_SERVER['PATH_INFO']);
 class Controller extends Model{
     public function __construct() {
         parent::__construct();
+        ob_start();
         // echo "called controller";
         $BaseURL = "http://localhost/laravel/29Sept_laravel_TTS2/PHP/14MVC/";
         if (isset($_SERVER['PATH_INFO'])) {
@@ -29,6 +31,25 @@ class Controller extends Model{
                 include_once("Views/header.php");
                 include_once("Views/loginpage.php");
                 include_once("Views/footer.php");
+                if (isset($_REQUEST['login'])) {
+                    $Res = $this->login($_POST['username'],$_POST['password']);
+                    if ($Res['Code'] == 1) {
+                        $_SESSION['UserData'] = $Res['Data'][0];
+                        if ($Res['Data'][0]->role_id == 1) {
+                            header("location:admindashboard");
+                        } else {
+                            header("location:home");
+                        }
+                         
+                    } else {
+                        echo "<script>alert('invalid user crediantials')</script>";
+                    }
+                    
+                    echo "<pre>";
+                    print_r($Res);
+                    
+                    echo "</pre>";
+                }
             break;
             case '/registration':
                 // $this->insert("users",array("username"=>"test","password"=>"123","gender"=>"Male"));
@@ -69,6 +90,7 @@ class Controller extends Model{
         }else{
             header("location:home");
         }
+        ob_flush();
     }
 }
 

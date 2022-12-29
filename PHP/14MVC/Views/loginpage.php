@@ -24,7 +24,7 @@
               <input type="password" name="password" class="form-input" placeholder="User Password">
             </div>
             
-            <button type="submit" class="btn btn-secondary btn-theme2">Submit</button>
+            <button type="submit" name="login" class="btn btn-secondary btn-theme2">Submit</button>
           </form>
           <div class="my-3 text-center">
           <a href="registration">Click here to create new account</a>
