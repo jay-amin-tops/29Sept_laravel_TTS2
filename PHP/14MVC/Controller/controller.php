@@ -8,7 +8,16 @@ class Controller extends Model{
         parent::__construct();
         ob_start();
         // echo "called controller";
+        // echo "<pre>";
+        // print_r($_SERVER);
         $BaseURL = "http://localhost/laravel/29Sept_laravel_TTS2/PHP/14MVC/";
+        // print_r($_SERVER['REQUEST_URI']);
+        // echo "<br>";
+        $uriarray = explode("/",$_SERVER['REQUEST_URI']);
+        // print_r($uriarray);
+        $BaseURLDynamic = $_SERVER['REQUEST_SCHEME']."://".$_SERVER['HTTP_HOST']."/".$uriarray[1]."/".$uriarray[2]."/".$uriarray[3]."/".$uriarray[4]."/assets/";
+        // echo "</pre>";
+        // exit;
         if (isset($_SERVER['PATH_INFO'])) {
             switch ($_SERVER['PATH_INFO']) {
                 case '/home':
@@ -81,6 +90,17 @@ class Controller extends Model{
                 include_once("Views/header.php");
                 echo "<h1>services page data</h1>";
                 include_once("Views/footer.php");
+                break;
+            case '/apiexample':
+                include_once("Views/header.php");
+                include_once("Views/apicalling.php");
+                include_once("Views/footer.php");
+                break;
+            case '/admindashboard':
+                include_once("Views/admin/adminheader.php");
+                include_once("Views/admin/dashboard.php");
+                // echo "<h1>services page data</h1>";
+                include_once("Views/admin/adminfooter.php");
                 break;
                 
                 default:

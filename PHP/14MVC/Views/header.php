@@ -64,6 +64,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="contact">Contact</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="apiexample">API calling</a>
+              </li>
             </ul>
             <form action="search-results" class="form-inline position-relative my-2 my-lg-0">
               <input class="form-control search" type="search" placeholder="Search here..." aria-label="Search" required="">
